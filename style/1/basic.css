@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	backgrouf:#fff;
+	width:960px;
+	margin:0 auto;
+	/*border:3px solid black;*/
+	font-size:14px;
+}
+ul{
+	list-style-type:none;  /*将前面的小圆点去掉*/
+	
+}
+h2{
+	font-size:14px;
+	background:#eee;  
+	height:25px;
+	line-height:25px; /*垂直居中*/
+	text-indent:10px;/*离左边10个像素*/
+}
+#header{
+	width:auto;
+	height:150px;
+	border:2px solid #ccc;
+	margin:10px 0;
+}
+#header h1{
+	font-size:16px;
+	width:181px;
+	height:62px;
+	margin:30px 0 0 30px;
+	/*background:url(../../images/logo.jpg)*/
+}
+#header ul{
+	
+	text-align:right;
+	
+	margin:30px 0px 0 0;
+	background:#c0c0c0;
+}
+#header ul li{
+	display:inline;
+	margin:30px;
+	font-size:16px;
+}
+#header ul li a{
+	text-decoration:none;
+	color:#333;
+}
+#header ul li a:hover{
+	
+	color:red;
+	
+}
+#footer{
+	clear:both;
+	width:auto;
+	height:60px;
+	text-align:center;
+	
+}
+#footer p{
+	font-size:12px;
+	letter-spacing:1px;
+	padding:5px 0 0 0;
+}
+#footer p span{
+	color:#061;
+}
