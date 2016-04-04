@@ -33,9 +33,14 @@ require dirname(_FILE_).'/includes/common.inc.php';
     $_clean['url']=_check_url($_POST['url']);
     _check_yzm($_POST['yzm'],$_SESSION['code']);
     //在新增之前必须判断用户名是否重复
-    $query=mysql_query("SELECT wp_username FROM wp_user WHERE wp_username='{$_clean['username']}'");
-     if(mysql_fetch_array($query)){
-        _alert_black('对不起，此用户名已经被注册');
+//     $query=_query("SELECT wp_username FROM wp_user WHERE wp_username='{$_clean['username']}'");
+     
+//      if(mysql_fetch_array($query)){
+//         _alert_black('对不起，此用户名已经被注册');
+//     }
+/*包装成如下*/
+    if(_panduan("SELECT wp_username FROM wp_user WHERE wp_username='{$_clean['username']}' LIMIT 1")){
+        _alert_black('对不起，此用户已经注册');
     }
     //新增用户
     mysql_query(
