@@ -1,37 +1,36 @@
-<?php
-include("config.php"); //å¼•å…¥æ•°æ®åº“è¿žæŽ¥æ–‡ä»¶
-$sql = "select * from content"; //æœç´¢æ•°æ®è¡¨content
-$resule = mysql_query($sql,$q);
+
+<?php 
+/*¶¨Òå¸ö³£Á¿£¬ÓÃÀ´ÅÐ¶Ïµ÷ÓÃincludeÀïÃæµÄÎÄ¼þ*/
+define('SCRIPT','index');
+define('IN_TG',true);
+//ÒýÈë¹«¹²ÎÄ¼þ
+require dirname(_FILE_).'/includes/common.inc.php';
 ?>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php 
+require 'includes/title.inc.php';
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<title>¶àÓÃ»§ÁôÑÔÏµÍ³</title>
+
+</head>
 <body>
-<table width="678" align="center">
-	<tr>
-		<td colspan="2"><h1>ç•™è¨€æœ¬</h1></td>
-	</tr>
-	<tr>
-		<td width="586"><a href="index.php">é¦–é¡µ</a> | <a href="liuyan.php">ç•™è¨€</a></td>
-	</tr>
-</table>
-<p>
-<?
-	while($row=mysql_fetch_array($resule))
-{
+<?php 
+include 'includes/header.inc.php';
 ?>
-</p>
-<table width="678" border="1" align="center" cellpadding="1" cellspacing="1">
-	<tr>
-		<td width="178">Name:<? echo $row[1] ?></td>
-		<td width="223">Email:<? echo $row[2] ?></td>
-	</tr>
-	<tr>
-		<td colspan="4"><? echo $row[3] ?></td>
-	</tr>
-	
-</table>
-<?
-}
+<div id="list">
+<h2>Ìû×ÓÁÐ±í</h2>
+</div>
+<div id="user">
+<h2>ÓÃ»§</h2>
+</div>
+<div id="pic">
+<h2>Í¼Æ¬</h2>
+</div>
+<?php 
+require 'includes/footer.inc.php';
 ?>
 </body>
 </html>
