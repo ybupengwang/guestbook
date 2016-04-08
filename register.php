@@ -77,9 +77,15 @@ require dirname(_FILE_).'/includes/common.inc.php';
                             '{$_SERVER["REMOTE_ADDR"]}'
                             )"
     ) or die('SQL执行失败');
-    mysql_close();
-    //跳转到首页
-    _location('恭喜您注册成功', 'index.php');
+    if(_affected_rows()==1){
+        mysql_close();
+        //跳转到激活界面
+        _location('恭喜您注册成功', 'active.php?active='.$_clean['active']);       
+    }else{
+        mysql_close();
+        _location('注册失败请重新注册', 'register.php');
+    }
+    
     //print_r($_clean);
 }
 $_SESSION['uniqid']=$_uniqid=_sha1_uniqid();

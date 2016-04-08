@@ -31,6 +31,9 @@ function _query($_sql){
 function _panduan($_sql){
     return mysql_fetch_array(_query($_sql));
 }
-
+//表示影响到的记录数
+function _affected_rows(){
+    return mysql_affected_rows();
+}
 
 ?>
