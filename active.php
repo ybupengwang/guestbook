@@ -12,13 +12,14 @@ require dirname(_FILE_).'/includes/common.inc.php';
     if(!$_GET['active']){
         _alert_black('非法操作'); 
     }
-    if(isset($_GET['action']) && isset($_GET['active']) && $_GET['action']=='OK'){
+    if(isset($_GET['active']) && $_GET['action']=='OK'){
         
-        $_active=$_GET['cative'];
-        if(_panduan("SELECT wp_active FROM wp_user WHERE wp_active='$_active' LIMIT 1")){
-            echo 'youshuzu';
+        $_active=$_GET['active'];
+        if(_panduan("SELECT wp_active FROM wp_user WHERE wp_active='$_active' LIMIT 1")){         
             //将wp_active设置为空值
             _query("UPDATE wp_user SET wp_active=NULL WHERE wp_active='$_active' LIMIT 1");
+            //$result=mysql_query("UPDATE wp_user SET wp_active=NULL WHERE wp_active='$_active' LIMIT 1");
+            //echo '$result';
             if(_affected_rows()==1){
                 mysql_close();
                 _location('账号激活成功', 'login.php');

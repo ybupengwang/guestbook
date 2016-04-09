@@ -104,6 +104,7 @@ $_SESSION['uniqid']=$_uniqid=_sha1_uniqid();
 <?php 
     include 'includes/title.inc.php';
 ?>
+<script type="text/javascript"src="js/code.js"></script>
 <script type="text/javascript"src="js/face.js"></script>
 </head>
 <body>
@@ -133,35 +134,6 @@ $_SESSION['uniqid']=$_uniqid=_sha1_uniqid();
 </div>
 <?php 
 require 'includes/footer.inc.php';
-/*wp_uniqid,
- wp_active,
- wp_username,
- wp_password,
- wp_question,
- wp_answer,
- wp_sex,
- wp_face,
- wp_email,
- wp_qq,
- wp_url,
- wp_reg_time,
- wp_last_time,
- wp_last_ip,
- 
- '{$_clean['uniqid']}',
-        '{$_clean['active']}',
-        '{$_clean['username']}',
-        '{$_clean['password']}',
-        '{$_clean['question']}',
-        '{$_clean['answer']}',
-        '{$_clean['sex']}',
-        '{$_clean['face']}',
-        '{$_clean['email']}',
-        '{$_clean['qq']}',
-        '{$_clean['url']}',
-        NOW(),
-        NOW(),
-        '{$_SERVER["REMOTE_ADDR"]}'*/
 ?>
 
 </body>

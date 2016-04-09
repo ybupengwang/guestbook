@@ -24,7 +24,7 @@ function _select_query(){
 }
 function _query($_sql){
     if(!$result=mysql_query($_sql)){
-     exit('sql÷¥–– ß∞‹');   
+     exit('sql÷¥–– ß∞‹');    
     }
     return $result;
 }

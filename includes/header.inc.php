@@ -8,7 +8,7 @@ if (!defined('IN_TG')){
 <ul>
 <li><a href=index.php>首页</a></li>
 <li><a href='register.php'>注册</a></li>
-<li>登陆</li>
+<li><a href='login.php'>登陆</a></li>
 <li>风格</li>
 <li>管理</li>
 
