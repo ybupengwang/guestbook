@@ -7,7 +7,7 @@ function _alert_black($_info){
 
 function _check_yzm($_first_yzm,$_end_yzm){
     if($_first_yzm!=$_end_yzm){
-        _alert_black('验证码不正确');
+        _alert_black('楠岃瘉鐮佷笉姝ｇ‘');
     }
 }
 function _sha1_uniqid(){
@@ -18,6 +18,11 @@ function _sha1_uniqid(){
 function _location($_info,$_url){
     echo "<script type='text/javascript'>alert('".$_info."');location.href='$_url';</script>";
     exit();
+}
+
+function _log($log){
+    date_default_timezone_set('prc');
+    file_put_contents('error.log', date("Y-m-d H:i:s"). " " . $log. "\r\n",FILE_APPEND);
 }
 ?>
 
