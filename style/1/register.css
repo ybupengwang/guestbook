@@ -22,6 +22,12 @@
 	padding:5px 0;
 	
 }
+#register dl dd p{
+	display:none;
+	margin:-15px 0 0px 0;
+	margin-left:300px;
+	
+}
 #register dl dd img#code{
 	position:relative;
 	top:8px;
@@ -34,7 +40,7 @@
 	border:1px dashed #333;
 	backgroud:#fff;
 }
-
+.msg{display:none;}
 #register dl dd.face{
 	padding:5px 0 0 400px;
 }
