@@ -1,0 +1,174 @@
+/*获得星期 mydate.getDay()*/
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>获得星期</title>
+<script type="text/javascript">
+  var mydate=new Date();
+  var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+  document.write("今天是：" +weekday[mydate.getDay()] );
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//设置时间方法getTime()  setsTime()
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日期对象 </title>
+<script type="text/javascript">
+ var mydate=new Date();
+  document.write("当前时间："+mydate+"<br>");
+  mydate.setTime(mydata.getTime() + 2* 60 * 60 * 1000);
+  document.write("推迟二小时时间：" + mydate);
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//字符串对象属性  mystr.length  mystr.toLowerCase()  mystr.toUpperCase()
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>string对象 </title>
+  <script type="text/javascript">
+    var message="I love JavaScript!";
+    message=message.toLowerCase();
+    var mychar=message.length;
+    document.write("字符串为："+mychar+"<br>");
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//返回指定位置的字符  charAt(index)  index 为字符串的下表
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>string对象 </title>
+  <script type="text/javascript">
+  var mystr="I love JavaScript!"
+  document.write(mystr.charAt(mystr.length-1) );
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//返回指定的字符串首次出现的位置
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>string对象 </title>
+<script type="text/javascript">
+  var mystr="Hello World!"
+  document.write(mystr.indexOf("o",6));
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+// 分割字符串
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+var mystr="86-010-85468578";
+document.write( mystr.split("-") + "<br />");
+document.write( mystr.split("") + "<br />");
+document.write( mystr.split("",3));
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//指定分割符连接数组元素
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Array对象 </title>
+<script type="text/javascript">
+    var myarr1= new Array("86","010")
+    var myarr2= new Array("84697581");
+   var myarr3= myarr1.concat(myarr2);
+document.write(myarr3.join("-"));
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+//数组排序  sort()
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Array对象 </title>
+<script type="text/javascript">
+   function sortNum(a,b) {
+    return b-a;
+   }
+var myarr = new Array("80","16","50","6","100","1");
+document.write(myarr.sort(sortNum));
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+//综合练习
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系好安全带,准备启航</title>
+
+<script type="text/javascript">
+
+  //通过javascript的日期对象来得到当前的日期，并输出。
+  
+  var mydate= new Date();
+  var myyear=mydate.getFullYear();
+  var mymonth=mydate.getMonth()+1;
+  var myday =mydate.getDate();
+  var sum=0;
+  var avg;
+var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+document.write(myyear+"年"+mymonth+"月"+myday+"日"+weekday[mydate.getDay()]);
+  
+  
+  //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+  var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+  var arr=scoreStr.split(";");  //根据“；”进行分割
+        for( var i=0;i<arr.length;i++ ){
+             var index=arr[i].indexOf(":"); 
+		     sum += parseInt(arr[i].substr(index+1,2));  //将字符串类型转换成整型
+        }
+      avg=sum/arr.length;
+      avg=Math.floor(avg);
+  //从数组中将成绩撮出来，然后求和取整，并输出。
+  document.write("班级总分为"+avg);
+</script>
+</head>
+<body>
+</body>
+</html>
