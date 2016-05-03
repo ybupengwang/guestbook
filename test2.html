@@ -1,0 +1,116 @@
+//使用setInterval() 计时器
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>定时器</title>
+<script type="text/javascript">
+  var attime;
+  function clock(){
+    var time=new Date();          
+    attime=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+    document.getElementById("clock").value = attime;
+  }
+ setInterval(clock,1000); 
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="clock" size="50"  />
+</form>
+</body>
+</html>
+
+
+//clearInterval()
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>计时器</title>
+<script type="text/javascript">
+   function clock(){
+      var time=new Date();               	  
+      document.getElementById("clock").value = time;
+   }
+     var i=setInterval("clock()",100);
+</script>
+</head>
+<body>
+  <form>
+    <input type="text" id="clock" size="50"  />
+    <input type="button" value="Stop" onclick="clearInterval(i)" />
+  </form>
+</body>
+</html>
+
+
+//取消计时器
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>计时器</title>
+</head>
+<script type="text/javascript">
+  var num=0;
+  var i;
+  function startCount(){
+    document.getElementById('count').value=num;
+    num=num+1;
+    i=setTimeout("startCount()",1000);
+  }
+  function stopCount(){
+  clearTimeout(i);
+  }
+</script>
+</head>
+<body>
+  <form>
+    <input type="text" id="count" />
+    <input type="button" value="Start" onclick="startCount()"/>
+    <input type="button" value="Stop"  onclick="stopCount()" />
+  </form>
+</body>
+</html>
+//navigator  浏览器的对象
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+var a=navigator.appVersion;
+  document.write(a);
+  
+</script>
+<body>
+</body>
+</html>
+
+
+
+//浏览器版本信息
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>navigator</title>
+<script type="text/javascript">
+  function validB(){ 
+    var u_agent =navigator.userAgent; 
+    var B_name="不是想用的主流浏览器!"; 
+    if(u_agent.indexOf("Firefox")>-1){ 
+        B_name="Firefox"; 
+    }else if(u_agent.indexOf("Chrome")>-1){ 
+        B_name="Chrome"; 
+    }else if(u_agent.indexOf("MSIE")>-1&&u_agent.indexOf("Trident")>-1){ 
+        B_name="IE(8-10)";  
+    }
+        document.write("浏览器:"+B_name+"<br>");
+        document.write("u_agent:"+u_agent+"<br>"); 
+  } 
+</script>
+</head>
+<body>
+  <form>
+     <input type="button" value="查看浏览器"  onclick="validB()" >
+  </form>
+</body>
+</html>
