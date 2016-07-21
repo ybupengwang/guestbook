@@ -1,0 +1,105 @@
+构造方法：
+Telphone phone = new Telphone();  
+1.使用new+构造方法 来创建一个新的对象
+2. 构造方法是定义在java类中的一个用来初始化对象的方法
+3.构造方法与类同名且没有返回值
+
+构造方法与方法的区别是  方法是代表对象可以干什么，而构造方法可以创建一个对象并且可以初始化对象的值
+
+/**************************/
+static 使用之静态变量
+
+我们可以基于一个类创建多个该类的对象，每个对象都拥有自己的成员，相互独立。然而在某些时候，该类所有的对象共享同一个成员。就需要static。
+
+java中被static修饰的成员成为静态成员，或者类成员，属于整个类所有。
+
+静态成员可以使用类名直接访问，也可以使用对象名访问。推荐使用类名访问
+
+使用static可以修饰变量、方法和代码块。
+
+public class HelloWorld {
+    
+    // 定义静态变量，保存班级名称
+	          static String className = "JAVA开发一班";
+
+	public static void main(String[] args) {
+        
+		// 访问静态变量，输出班级名称
+		System.out.println( HelloWorld.className ); //通过类名访问
+        
+        HelloWorld demo= new HelloWorld();
+        System.out.println( demo.className ); //通过对象名访问
+	}
+}
+
+/*****************************/
+static 使用之静态方法
+与静态变量一样，我们也可以使用 static 修饰方法，称为静态方法或类方法。
+public class HelloWorld {
+    
+    // 定义静态变量score1
+    static int score1 = 86;
+    // 定义静态变量score2
+	static int score2 = 92; 
+
+    // 定义静态方法sum，计算成绩总分，并返回总分
+	public static int sum() { 
+      
+      return score1+score2;
+      
+	}
+
+	public static void main(String[] args) {
+        
+        // 调用静态方法sum并接收返回值
+		int allScore = HelloWorld.sum();
+        
+		System.out.println("总分：" + allScore);
+	}
+}
+
+/******************************************/
+ static 静态初始化块
+Java 中可以通过初始化块进行数据赋值。
+
+在类的声明中，可以包含多个初始化块，当创建类的实例时，就会依次执行这些代码块。如果使用 static 修饰初始化块，就称为静态初始化块。
+
+需要特别注意：静态初始化块只在类加载时执行，且只会执行一次，同时静态初始化块只能给静态变量赋值，不能初始化普通的成员变量。
+
+public class HelloWorld {
+    
+    String name; // 声明变量name
+	String sex; // 声明变量sex
+	static int age;// 声明静态变量age
+    
+    // 构造方法
+	public HelloWorld () { 
+		System.out.println("通过构造方法初始化name");
+		name = "tom";
+	}
+    
+    // 初始化块
+	{ 
+		System.out.println("通过初始化块初始化sex");
+		sex = "男";
+	}
+    
+    // 静态初始化块
+	    static { 
+		System.out.println("通过静态初始化块初始化age");
+		age = 20;
+	}
+    
+	public void show() {
+		System.out.println("姓名：" + name + "，性别：" + sex + "，年龄：" + age);
+	}
+    
+	public static void main(String[] args) {
+        
+        // 创建对象
+		HelloWorld hello = new HelloWorld();
+		// 调用对象的show方法
+        hello.show();
+        
+	}
+}
