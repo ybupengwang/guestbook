@@ -1,0 +1,74 @@
+封装就是将类的信息隐藏在类的内部，不允许外部程序直接访问，而是通过该类提供的方法来实现对隐藏信息的操作和访问。
+
+好处：通过规定的方法来访问
+
+实现步骤  1.修改属性的可见性 设置为private   
+2.创建getter/setter方法 用于属性的读写。
+3.在getter/setter方法中加入属性控制语句（对属性值的合法性进行判断）
+
+
+java包 
+类似于我们日常生活中的文件夹作用
+包的作用：管理java文件 解决同名文件冲突 
+
+2.定义包：package包名
+注：必须放在java源程序的第一行   包名间可以使用“.”号隔开  例如：package.class
+package.music.myclassmusic    package.movie。myclassmusic
+
+包的使用：
+（1）可以通过import关键字，在某个文件使用其他文件中的类  import package.music.myclass
+可以区别同名的类
+
+
+访问修饰符：
+可以修饰属性和方法的访问范围
+
+访问修饰符    本类    同包    子类   其他
+private       1
+默认          1        1
+protected     1        1       1
+public        1        1       1       1
+
+this 关键字
+ this关键字代表当前对象
+this.属性  操作当前对象的属性
+hist.方法  调用当前对象的方法
+
+2.  封装对象的属性的时候，经常会使用this关键字
+
+public float getCpu() {
+		return cpu;
+	}
+	public void setCpu(float cpu) {
+		this.cpu = cpu;   //为了区分属性和参数的概念  在属性前面加上this.   
+
+
+
+java中的内部类：
+内部类（ Inner Class ）就是定义在另外一个类里面的类。与之对应，包含内部类的类被称为外部类。
+//外部类HelloWorld
+public class HelloWorld {
+    
+    // 内部类Inner，类Inner在类HelloWorld的内部
+    public class Inner {
+        
+		// 内部类的方法
+		public void show() {
+			System.out.println("welcome to imooc!");
+		}
+	}
+    
+	public static void main(String[] args) {
+        
+        // 创建外部类对象
+		HelloWorld hello = new HelloWorld();
+        // 创建内部类对象
+		Inner i = hello.new Inner();
+        // 调用内部类对象的方法
+		i.show();
+	}
+}
+
+	}
+
+
