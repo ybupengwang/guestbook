@@ -1,0 +1,8 @@
+Object类
+Object类是所有类的父类，如果一个类没有使用extends关键字明确标识继承另外一个类，那么这个类默认继承Object类。
+Object类中的方法，适用于所有子类
+
+1.toString（）方法
+2.equals（）方法
+比较的是对象的引用是否指向同一块内存地址
+Dog dog=new Dog（）
