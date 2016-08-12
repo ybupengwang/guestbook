@@ -15,6 +15,32 @@ public class Dog extends Animal {
 		super.eat();
 		eat();//输出子类方法
 	}
+	@Override
+	public String toString() {
+		return "Dog [age=" + age + "]";
+	}  //重新toString
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())//可以得到类对象，可以判断类对象的类型。 类的对象关注的是对象的属性
+			return false;
+		Dog other = (Dog) obj;
+		if (age != other.age)
+			return false;
+		return true;
+	}
+	
+	
 	
 
 }

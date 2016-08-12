@@ -1,6 +1,6 @@
 package project3;
 
-public class Animal {
+public class Animal extends Object {
 	public int age=10;
 	public String name;
 	public void eat(){
